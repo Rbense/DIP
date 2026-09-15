@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DIP App Support - Hilfe und häufig gestellte Fragen">
+    <title>DIP - Support & Hilfe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+        }
+        h1 {
+            color: #007AFF;
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+        }
+        .subtitle {
+            color: #86868b;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .contact-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #007AFF;
+        }
+        .contact-box h2 {
+            color: #007AFF;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        .contact-box a {
+            color: #007AFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            transition: opacity 0.2s;
+        }
+        .contact-box a:hover {
+            opacity: 0.7;
+        }
+        .contact-box p {
+            margin: 10px 0;
+        }
+        h2 {
+            color: #1d1d1f;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: 700;
+        }
+        .section-intro {
+            color: #86868b;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        .faq-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f5f5f7;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.2em;
+            color: #1d1d1f;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .faq-question:before {
+            content: "Q:";
+            display: inline-block;
+            background: #007AFF;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 12px;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+        .faq-answer {
+            color: #515154;
+            line-height: 1.8;
+            font-size: 1.05em;
+            padding-left: 42px;
+        }
+        .privacy-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #4caf50;
+        }
+        .privacy-box h2 {
+            color: #2e7d32;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        .privacy-box p {
+            margin-bottom: 20px;
+            color: #1b5e20;
+        }
+        .privacy-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .privacy-box li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            color: #1b5e20;
+            font-size: 1.05em;
+        }
+        .privacy-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        .feedback-box {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border-left: 5px solid #9c27b0;
+            text-align: center;
+        }
+        .feedback-box h2 {
+            color: #9c27b0;
+            margin-top: 0;
+        }
+        .feedback-box a {
+            color: #9c27b0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #f5f5f7;
+            color: #86868b;
+            font-size: 0.95em;
+        }
+        footer p {
+            margin: 8px 0;
+        }
+        footer strong {
+            color: #1d1d1f;
+        }
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="app-icon">🗺️</div>
+            <h1>DIP Support</h1>
+            <p class="subtitle">Echte Treffen. Echte Freundschaft.</p>
+        </div>
+        
+        <div class="contact-box">
+            <h2><span class="emoji">📧</span> Kontakt</h2>
+            <p><strong>Email:</strong> <a href="mailto:rolf.bense@web.de">rolf.bense@web.de</a></p>
+            <p style="color: #515154; margin-top: 15px;">Wir antworten innerhalb von 48 Stunden auf alle Anfragen.</p>
+        </div>
+        
+        <h2><span class="emoji">❓</span> Häufig gestellte Fragen</h2>
+        <p class="section-intro">Hier findest du Antworten auf die wichtigsten Fragen zur DIP App.</p>
+        
+        <div class="faq-item">
+            <div class="faq-question">Wie funktioniert Location Sharing?</div>
+            <div class="faq-answer">
+                Gehe zu deinem Profil und aktiviere Location Sharing. Nur Freunde, die du hinzugefügt hast, 
+                können deinen Standort sehen. Du kannst es jederzeit deaktivieren, indem du deinen Status 
+                auf "Offline" änderst. Dein Standort ist niemals öffentlich sichtbar.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Wie füge ich Freunde hinzu?</div>
+            <div class="faq-answer">
+                Tippe auf den <strong>Friends-Tab</strong> am unteren Bildschirmrand. Dort findest du deinen 
+                persönlichen QR-Code und Friend Code. Du kannst den Code mit Freunden teilen oder ihren 
+                QR-Code scannen, um sie hinzuzufügen.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Wie erstelle ich ein Event?</div>
+            <div class="faq-answer">
+                Tippe auf den <strong>Events-Tab</strong> und dann auf das <strong>"+"</strong>-Symbol oben rechts. 
+                Gib einen Titel, eine Beschreibung und optional einen Ort ein. Wähle die Sichtbarkeit 
+                (alle Freunde oder nur ausgewählte) und erstelle das Event. Deine Freunde werden sofort benachrichtigt.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Wie lösche ich meinen Account?</div>
+            <div class="faq-answer">
+                Gehe zu <strong>Profil → Account → "Account löschen"</strong>. Du wirst aufgefordert, 
+                "LÖSCHEN" einzutippen, um die Aktion zu bestätigen. Alle deine Daten werden permanent entfernt 
+                und können nicht wiederhergestellt werden. Dies umfasst dein Profil, alle Nachrichten, 
+                Events und Freundschaften.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Ist mein Standort sicher?</div>
+            <div class="faq-answer">
+                <strong>Ja, absolut!</strong> Dein Standort ist nur für Freunde sichtbar, die DU aktiv hinzugefügt hast. 
+                Er ist niemals öffentlich und wird nicht für Werbezwecke verwendet. Wir speichern nur die minimal 
+                notwendigen Daten und alle Server stehen in der EU (DSGVO-konform).
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Warum benötigt die App "Always Location"?</div>
+            <div class="faq-answer">
+                Damit deine Freunde deine Position auch sehen können, wenn die App im Hintergrund läuft oder 
+                dein Bildschirm gesperrt ist. Dies ermöglicht echte Echtzeit-Updates. Du hast volle Kontrolle 
+                und kannst Location Sharing jederzeit über deinen Status deaktivieren.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Wie ändere ich meinen Status?</div>
+            <div class="faq-answer">
+                Tippe auf den <strong>Profil-Tab</strong> und dann auf deinen aktuellen Status. Wähle aus:
+                <strong>Verfügbar</strong> (grün), <strong>Gelangweilt</strong> (gelb), <strong>Beschäftigt</strong> (orange), 
+                <strong>Nicht stören</strong> (rot) oder <strong>Offline</strong> (grau). Im Offline-Modus wird dein 
+                Standort nicht mehr geteilt.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Kann ich einzelne Freunde blockieren?</div>
+            <div class="faq-answer">
+                Derzeit kannst du Freunde entfernen, indem du in der Freundesliste nach links wischst und auf 
+                "Entfernen" tippst. Blockier-Funktionen werden in einem zukünftigen Update hinzugefügt.
+            </div>
+        </div>
+        
+        <div class="privacy-box">
+            <h2><span class="emoji">🔒</span> Datenschutz & Sicherheit</h2>
+            <p>Deine Privatsphäre ist uns extrem wichtig. Vollständige Details findest du in der App unter <strong>Profil → Datenschutz</strong>.</p>
+            <ul>
+                <li>DSGVO-konform nach deutschem und europäischem Recht</li>
+                <li>Alle Server stehen in der Europäischen Union</li>
+                <li>Keine Weitergabe von Daten an Drittanbieter oder Werbefirmen</li>
+                <li>Account und alle Daten jederzeit löschbar</li>
+                <li>Verschlüsselte Datenübertragung (HTTPS/TLS)</li>
+                <li>Standort nur für deine Freunde sichtbar (niemals öffentlich)</li>
+            </ul>
+        </div>
+        
+        <div class="feedback-box">
+            <h2><span class="emoji">💙</span> Feedback & Verbesserungsvorschläge</h2>
+            <p style="color: #4a148c; margin-bottom: 20px;">
+                Wir lieben Feedback! Deine Meinung hilft uns, DIP noch besser zu machen.
+            </p>
+            <p>
+                <strong>Schreib uns:</strong> <a href="mailto:rolf.bense@web.de">rolf.bense@web.de</a>
+            </p>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 Rolf Bense. Alle Rechte vorbehalten.</p>
+            <p style="margin-top: 15px; font-size: 1.1em;"><strong>DIP</strong> - Dip in and see your friends!</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                Made with 💙 in Germany
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
