@@ -166,7 +166,7 @@
         
         <div class="content">
             <div class="last-updated">
-                <strong>Stand:</strong> 16. September 2026
+                <strong>Stand:</strong> 9. Oktober 2026
             </div>
             
             <p>Willkommen bei <strong>DIP</strong> – Ihrer App für spontane Treffen mit Freunden. Der Schutz Ihrer persönlichen Daten ist uns sehr wichtig. In dieser Datenschutzerklärung informieren wir Sie darüber, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben.</p>
@@ -174,7 +174,8 @@
             <h2>1. Verantwortlicher</h2>
             <div class="contact-info">
                 <h3>Rolf Bense</h3>
-                <p>Email: <a href="mailto:rbense@icloud.com">rbense@icloud.com</a></p>
+                <p>Achtern Wehrt Hoff 1<br>21635 Jork</p>
+                <p>Email: <a href="mailto:rolf.bense@web.de">rolf.bense@web.de</a></p>
             </div>
             
             <h2>2. Erhobene Daten</h2>
@@ -216,13 +217,31 @@
                 <li><strong>Freundesliste:</strong> Liste Ihrer bestätigten Freunde in der App</li>
                 <li><strong>Friend Code:</strong> Ihr eindeutiger 8-stelliger Code zum Hinzufügen von Freunden</li>
                 <li><strong>Events ("Dips"):</strong> Von Ihnen erstellte Events (Titel, Beschreibung, Ort, Zeit, Sichtbarkeit)</li>
-                <li><strong>Chat-Nachrichten:</strong> Nachrichten in privaten Chats und Event-Gruppen</li>
+                <li><strong>Chat-Nachrichten:</strong> Nachrichten und Fotos in Einzel-, Gruppen- und Dip-Chats</li>
+                <li><strong>Gruppen:</strong> Von Ihnen erstellte oder genutzte Freundesgruppen (Name, Beschreibung, Symbol oder Bild, Mitglieder)</li>
+                <li><strong>Privatsphäre-Einstellungen:</strong> Welchen Freunden Sie Ihren Status oder Standort verbergen</li>
+            </ul>
+
+            <h3>2.3a Profil und Fotos</h3>
+            <ul>
+                <li><strong>Profilbild:</strong> Optional, in Firebase Storage gespeichert und für Ihre Freunde sichtbar</li>
+                <li><strong>Gruppenbilder und Chat-Fotos:</strong> Fotos, die Sie in Gruppen oder Chats senden, sind für die Teilnehmer des jeweiligen Chats sichtbar</li>
+            </ul>
+
+            <h3>2.3b Ortssuche</h3>
+            <ul>
+                <li>Beim Erstellen eines Dips können Sie nach Orten suchen. Dabei wird Ihr Suchtext übermittelt, unter Android zusätzlich Ihre ungefähre Position, um passende Ergebnisse in Ihrer Nähe zu finden.</li>
+                <li><strong>Android:</strong> Die Suche läuft über die Google Places API (Google). <strong>iOS:</strong> Die Suche läuft über Apple Karten (Apple).</li>
+                <li>Der gewählte Ort wird als Teil des Dips gespeichert.</li>
+            </ul>
+            <ul>
+                <li><strong>Zuletzt bekannter Standort:</strong> Wird ausschließlich lokal auf Ihrem Gerät gespeichert, damit die Karte schneller öffnet. Er wird dadurch nicht übertragen.</li>
             </ul>
             
             <h3>2.4 Gerätedaten</h3>
             <ul>
                 <li><strong>Device Token:</strong> Für Push-Benachrichtigungen (Firebase Cloud Messaging)</li>
-                <li><strong>Plattform:</strong> iOS-Version, Gerätemodell (nur zur Fehleranalyse)</li>
+                <li><strong>App-Version</strong></li>
             </ul>
             
             <h2>3. Zweck der Datenverarbeitung</h2>
@@ -231,6 +250,7 @@
             <h3>3.1 Bereitstellung der App-Funktionen</h3>
             <ul>
                 <li>Anzeige Ihrer Position auf der Karte (nur für akzeptierte Freunde sichtbar)</li>
+                <li>Anzeige von Karten und Suche nach Orten (Google Maps/Places auf Android, Apple Karten auf iOS)</li>
                 <li>Koordination spontaner Treffen</li>
                 <li>Verwaltung von Events und Teilnehmern</li>
                 <li>Chat-Funktionalität zwischen Freunden</li>
@@ -252,7 +272,7 @@
             <ul>
                 <li>Authentifizierung und Zugangskontrolle</li>
                 <li>Missbrauchsprävention</li>
-                <li>Fehlerdiagnose und technische Verbesserungen</li>
+                <li>Technische Fehlerbehebung</li>
             </ul>
             
             <h2>4. Rechtsgrundlagen (DSGVO)</h2>
@@ -267,8 +287,9 @@
             
             <h3>5.1 An Ihre Freunde (mit Ihrer Zustimmung)</h3>
             <ul>
-                <li>Ihr Name, Verfügbarkeitsstatus und Standort sind <strong>nur für akzeptierte Freunde</strong> sichtbar</li>
-                <li>Sie können jederzeit Freunde entfernen (Wischen nach links in der Freundesliste)</li>
+                <li>Ihr Name, Profilbild, Verfügbarkeitsstatus samt Statusnachricht und Standort sind <strong>nur für akzeptierte Freunde</strong> sichtbar</li>
+                <li>Sie können Status und Standort pro Freund verbergen (Freundesliste → Freund antippen → Privatsphäre)</li>
+                <li>Sie können jederzeit Freunde entfernen</li>
             </ul>
             
             <h3>5.2 An Dienstleister (Auftragsverarbeitung)</h3>
@@ -276,11 +297,18 @@
                 <strong>Firebase (Google Cloud Platform)</strong>
                 <ul>
                     <li><strong>Zweck:</strong> Hosting, Datenbank, Authentifizierung, Push-Benachrichtigungen</li>
-                    <li><strong>Standort:</strong> EU-Server (soweit verfügbar) oder USA mit Standardvertragsklauseln</li>
+                    <li><strong>Standort:</strong> Die Datenbank (Firestore) und der Bildspeicher (Storage) liegen in Frankfurt am Main (EU). Bei Diensten von Google, die Daten auch außerhalb der EU verarbeiten können, gelten Standardvertragsklauseln bzw. der EU-US Datenschutzrahmen.</li>
                     <li><strong>Datenschutz:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
                 </ul>
             </div>
             
+            <h3>5.2a Weitere Dienste</h3>
+            <ul>
+                <li><strong>Google Maps und Google Places (Android):</strong> Kartenanzeige und Ortssuche. Datenschutz: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+                <li><strong>Apple Karten (iOS):</strong> Kartenanzeige und Ortssuche. Datenschutz: <a href="https://www.apple.com/legal/privacy/de-ww/" target="_blank">apple.com/legal/privacy</a></li>
+                <li><strong>Anmeldung mit Google bzw. Apple:</strong> nur wenn Sie diese Anmeldung wählen</li>
+            </ul>
+
             <h3>5.3 Keine Weitergabe an Dritte</h3>
             <p>Wir verkaufen Ihre Daten <strong>niemals</strong> an Dritte. Eine Weitergabe erfolgt nur:</p>
             <ul>
@@ -291,14 +319,14 @@
             <h2>6. Speicherdauer</h2>
             <ul>
                 <li><strong>Nutzerkonto:</strong> Bis zur Löschung Ihres Accounts</li>
-                <li><strong>Standortdaten:</strong> Nur aktuelle Position, keine Historie wird gespeichert</li>
+                <li><strong>Standortdaten:</strong> Nur aktuelle Position, keine Historie wird gespeichert. Der zuletzt bekannte Standort liegt zusätzlich nur lokal auf Ihrem Gerät.</li>
                 <li><strong>Chat-Nachrichten:</strong>
                     <ul>
                         <li><em>Freundes-Chats:</em> Bis zur Löschung durch Sie oder Entfernung des Freundes</li>
-                        <li><em>Event-Chats:</em> Automatische Löschung 24 Stunden nach Event-Ende</li>
+                        <li><em>Dip-Chats:</em> Automatische Löschung 24 Stunden nach Ende des Dips</li>
                     </ul>
                 </li>
-                <li><strong>Events:</strong> Automatische Löschung vergangener Events nach 30 Tagen</li>
+                <li><strong>Events (Dips):</strong> Automatische Löschung 24 Stunden nach dem Ende des Dips</li>
             </ul>
             
             <h2>7. Ihre Rechte</h2>
@@ -315,11 +343,11 @@
                 <strong>Account löschen:</strong>
                 <ol>
                     <li>Öffnen Sie die App</li>
-                    <li>Gehen Sie zu <em>Einstellungen → Account</em></li>
+                    <li>Gehen Sie zu <em>Profil → Account löschen</em></li>
                     <li>Tippen Sie auf <em>"Account löschen"</em></li>
                     <li>Bestätigen Sie die Löschung</li>
                 </ol>
-                <p><strong>Alle Ihre Daten werden innerhalb von 24 Stunden unwiderruflich gelöscht.</strong></p>
+                <p><strong>Ihr Konto, Ihr Profil, Ihre Freundschaften, Ihre Dips und Zusagen werden sofort gelöscht.</strong> Ihre früheren Chat-Nachrichten bleiben für die anderen Teilnehmer erhalten, werden aber anonymisiert (Absender „[Gelöschter Nutzer]“, Text „[Nachricht gelöscht]“). Bilder (Profilbild, Gruppen- und Chat-Fotos) löschen wir auf Anfrage per E-Mail an <a href="mailto:rolf.bense@web.de">rolf.bense@web.de</a>.</p>
             </div>
             
             <h3>7.4 Einschränkung der Verarbeitung (Art. 18 DSGVO)</h3>
@@ -338,7 +366,7 @@
             <p>Wir ergreifen umfassende technische und organisatorische Maßnahmen zum Schutz Ihrer Daten:</p>
             <ul>
                 <li><strong>Verschlüsselung:</strong> Alle Daten werden über HTTPS verschlüsselt übertragen</li>
-                <li><strong>Passwörter:</strong> Werden mit modernen Hashing-Algorithmen gespeichert</li>
+                <li><strong>Passwörter:</strong> Werden von Firebase Authentication mit modernen Hashing-Algorithmen gespeichert</li>
                 <li><strong>Zugriffskontrolle:</strong> Nur autorisierte Systeme haben Zugriff auf die Datenbank</li>
                 <li><strong>Firebase Security Rules:</strong> Strikte Zugriffsregeln schützen Ihre Daten</li>
                 <li><strong>Regelmäßige Updates:</strong> Sicherheitsupdates werden zeitnah eingespielt</li>
@@ -348,13 +376,13 @@
             <p>Die App ist für Nutzer ab <strong>18 Jahren</strong> konzipiert. Wir erheben wissentlich keine Daten von Personen unter 18 Jahren. Falls Sie feststellen, dass ein Minderjähriger die App nutzt, kontaktieren Sie uns bitte umgehend.</p>
             
             <h2>10. Änderungen dieser Datenschutzerklärung</h2>
-            <p>Wir behalten uns vor, diese Datenschutzerklärung zu aktualisieren, um Änderungen in der App oder rechtliche Anforderungen zu berücksichtigen. Bei wesentlichen Änderungen werden wir Sie per Push-Benachrichtigung oder E-Mail informieren.</p>
+            <p>Wir behalten uns vor, diese Datenschutzerklärung zu aktualisieren, um Änderungen in der App oder rechtliche Anforderungen zu berücksichtigen. Änderungen werden in der App kommuniziert.</p>
             
             <h2>11. Kontakt</h2>
             <p>Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte:</p>
             <div class="contact-info">
                 <h3>Rolf Bense</h3>
-                <p>Email: <a href="mailto:rbense@icloud.com">rbense@icloud.com</a></p>
+                <p>Email: <a href="mailto:rolf.bense@web.de">rolf.bense@web.de</a></p>
                 <p>Antwort innerhalb von 48 Stunden</p>
             </div>
             
@@ -366,14 +394,14 @@
                     <li>✅ <strong>Manueller Check-In:</strong> Sie müssen aktiv einen Status setzen, um Ihren Standort zu teilen</li>
                     <li>✅ <strong>Jederzeit deaktivierbar:</strong> Status auf "Offline" setzen stoppt sofort die Standortfreigabe</li>
                     <li>✅ <strong>Nur für Freunde:</strong> Nur bestätigte Freunde sehen Ihren Standort</li>
-                    <li>✅ <strong>Freunde entfernen:</strong> Wischen Sie nach links in der Freundesliste</li>
+                    <li>✅ <strong>Pro Freund verbergen:</strong> Status und Standort lassen sich vor einzelnen Freunden verstecken</li>
                 </ul>
             </div>
         </div>
         
         <div class="footer">
             <p><strong>DIP App - Datenschutzerklärung</strong></p>
-            <p>Stand: 16. September 2026</p>
+            <p>Stand: 9. Oktober 2026</p>
             <p>© 2026 Rolf Bense. Alle Rechte vorbehalten.</p>
         </div>
     </div>
